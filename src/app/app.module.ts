@@ -46,6 +46,7 @@ import { AddressListComponent } from './address-list/address-list.component';
 import { CustomerAddressComponent } from './customer-address/customer-address.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { languageLoader } from 'src/assets/translation/translation';
+// import { EffectsModule } from '@ngrx/effects';
 
 
 const appRoutes: Routes = [
@@ -182,7 +183,8 @@ const appRoutes: Routes = [
       isolate: false,
   }),
     OwlDateTimeModule,
-    OwlNativeDateTimeModule
+    OwlNativeDateTimeModule,
+    // EffectsModule
   ],
   providers: [EmployeeService, ProductService],
   bootstrap: [AppComponent]
