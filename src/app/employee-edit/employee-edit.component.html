@@ -1,0 +1,53 @@
+<mat-card>
+    <form #employeeForm="ngForm" class="example-form" (ngSubmit)="save(employeeForm.value)">
+      <mat-card-header>
+          <mat-toolbar>
+              <span>{{employee.UserName ? 'Edit' : 'Add'}} Employee</span>
+            </mat-toolbar>
+      </mat-card-header>
+      <mat-card-content class="example-full-width">
+          <input type="hidden" name="EmployeeId" [(ngModel)]="employee.EmployeeId">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="FistName" [(ngModel)]="employee.FirstName" required name="FirstName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last Name" [(ngModel)]="employee.LastName" required name="LastName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="UserName" [(ngModel)]="employee.UserName" required name="UserName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email Address" [(ngModel)]="employee.Email" required name="Email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" [(ngModel)]="employee.Password" required name="Password">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Contact No" [(ngModel)]="employee.Mobile" required name="Mobile">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Address" [(ngModel)]="employee.Address" required name="Address"></textarea>
+        </mat-form-field>
+        <!-- <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="employee.measuredAt" [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="Measured At"
+            name="measuredAt" required>
+          <owl-date-time #dt2></owl-date-time>
+          <mat-error>
+            Required
+          </mat-error>
+        </mat-form-field> -->
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.form.valid">Save
+        </button>
+        <button mat-raised-button color="secondary" (click)="remove(employee.EmployeeId)" *ngIf="employee.EmployeeId" type="button">Delete
+        </button>
+        <a mat-button routerLink="/employee-list" color="red" >Cancel</a>
+      </mat-card-actions>
+      <mat-card-footer>
+  
+      </mat-card-footer>
+
+      
+    </form>
+  </mat-card>

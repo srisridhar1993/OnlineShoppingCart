@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-toolbar><span>Order No #{{orderMaster.OrderNumber}}({{orderMaster.OrderDate}}) </span></mat-toolbar>
+    <mat-card-content>
+        <div>
+            <h3>Shipping Address:</h3>
+            <p>
+                {{orderMaster.ShippingAddress}}
+            </p>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of orderProduct">
+                    <td>
+                        <img src="{{item.ProductImage}}" style="height: 50px;width:80px;" alt="image"/>
+                    </td>
+                    <td>
+                        {{item.ProductName}}
+                    </td>
+                    <td>
+                        <mat-icon class="icon" (click)="addquantity(item.ProductId)" >add</mat-icon>
+                        {{item.Quantity}}
+                        <mat-icon class="icon" (click)="removequantity(item.ProductId)">remove</mat-icon>
+                    </td>
+                    <td>
+                        {{item.UnitPrice}}
+                    </td>
+                    <td>
+                        {{item.TotalPrice}}
+                    </td>
+                    <td>
+                        <a>
+                            <mat-icon class="icon" (click)="removefromcart(item.ProductId)" >delete</mat-icon>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="4">Grand Total</th>
+                    <th colspan="2">{{grandTotal}}</th>
+                </tr>
+            </tfoot>
+        </table>
+    </mat-card-content>
+</mat-card>

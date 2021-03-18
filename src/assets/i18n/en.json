@@ -1,0 +1,125 @@
+{
+    "ADDRESS_LIST": {
+        "TITLE": "Your All Address List",
+        "NAME" : "Name",
+        "ADDRESS_ONE": "Address1",
+        "ADDRESS_TWO": "Address2",
+        "LANDMARK": "LandMark",
+        "PINCODE":"Pincode",
+        "CONTACT_NO":"ContactNo",
+        "ACTION": "Action",
+        "ADD": "Add"
+    },
+    "CART_LIST": {
+        "TITLE": "Your Shopping Cart",
+        "IMAGE": "Image",
+        "PRODUCT_NAME": "Product Name",
+        "QUANTITY": "Quantity",
+        "UNIT_PRICE": "Unit Price",
+        "TOTAL_PRICE": "Total Price",
+        "REMOVE": "Remove",
+        "ADD": "Add",
+        "DELETE": "Delete",
+        "GRAND_TOTAL": "Grand Total",
+        "CONTINUE_SHOPPING": "Continue Shopping",
+        "PLACE_ORDER": "Place Order"
+    },
+    "ADD_CUSTOMER": {
+        "REGISTRATION": "Registration",
+        "SAVE": "Save",
+        "DELETE": "Delete",
+        "LOGIN": "Login"
+    },
+    "ADD_NEW_ADDRESS": {
+        "TITLE": "Add New Address",
+        "COUNTRY": "Country",
+        "SELECT_COUNTRY": "Select Country",
+        "STATE": "State",
+        "SELECT_STATE": "Select State",
+        "SAVE": "Save",
+        "CANCEL": "Cancel",
+        "DELETE": "Delete"
+    },
+    "CUSTOMER_LIST": {
+        "NAME": "Name",
+        "MOBILE": "Mobile",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "ACTION": "Action",
+        "EDIT": "Edit",
+        "ADD": "Add"
+    },
+    "EMPLOYEE_LIST": {
+        "TITLE": "Employee List",
+        "FIRST_NAME": "",
+        "LAST_NAME": "",
+        "MOBILE": "Mobile",
+        "EMAIL": "Email",
+        "ADDRESS": "Address",
+        "ACTION": "Action",
+        "EDIT": "Edit",
+        "ADD": "Add"
+    },
+    "LOGIN": {
+        "LOGIN": "Login",
+        "REGISTER": "Register"
+    },
+    "ORDER_DETAILS": {
+        "SHIPPING_ADDRESS": "Shipping Address",
+        "ORDER_NO": "Order No #",
+        "IMAGE": "Image",
+        "PRODUCT_NAME": "Product Name",
+        "QUANTITY": "Quantity",
+        "UNIT_PRICE": "Unit Price",
+        "TOTAL_PRICE": "Total Price",
+        "REMOVE": "Remove",
+        "ADD": "Add",
+        "DELETE": "Delete",
+        "GRAND_TOTAL": "Grand Total"
+    },
+    "ORDER_LIST": {
+        "TITLE": "Your Order List",
+        "ORDER": "Order",
+        "CUSTOMER": "Customer",
+        "ADDRESS": "Address",
+        "AMOUNT": "Amount",
+        "ORDER_DATE": "Order Date",
+        "ACTION" : "Action",
+        "ORDER_DETAILS": "Order Details"
+    },
+    "ADD_PRODUCT": {
+        "PRODUCT_BASIC_INFO": "Product Basic Info",
+        "PRODUCT_CATEGORY": "Product Category",
+        "PRODUCT_BRAND": "Product Brand",
+        "NEXT": "Next",
+        "PRODUCT_PRICING": "Product Pricing",
+        "BACK": "Back",
+        "PRODUCT_INVENTORY": "Product Inventory",
+        "PRODUCT_SHIPPING": "Product Shipping",
+        "PRODUCT_IMAGES": "Product Images",
+        "CLOUD_UPLOAD": "Cloud Upload",
+        "UPLOAD": "Upload",
+        "SAVE": "Save",
+        "DONE": "You are now done",
+        "SAVE_PRODUCT": "Save Product",
+        "RESET": "Reset",
+        "CANCEL": "Cancel"
+    },
+    "PRODUCT_LIST": {
+        "TITLE": "Product List",
+        "PRODUCT_NAME": "Product Name",
+        "CATEGORY_NAME": "Category Name",
+        "BRAND_NAME": "Brand Name",
+        "AVAILABLE_QUANTITY": "Available Quantity",
+        "TAX_EXCLUDED_PRICE": "Tax Excluded Price",
+        "IMAGE": "Image",
+        "ACTION": "Action",
+        "EDIT": "Edit",
+        "ADD": "Add"
+    },
+    "SHOP_PRODUCT": {
+        "DETAIL_VIEW": "Detail View",
+        "ADD_TO_CART": "Add To Cart",
+        "INR": "INR"
+    }
+}

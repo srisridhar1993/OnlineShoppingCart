@@ -1,0 +1,61 @@
+<mat-card>
+        <form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm.value)">
+    <mat-toolbar>
+        <span>Add New Address</span>
+    </mat-toolbar>
+    
+        <mat-card-content>
+            <div>
+                <input type="hidden" [(ngModel)]="address.BillingAddressId" name="BillingAddressId" >
+                <mat-radio-group style="padding: 5%;" [(ngModel)]="address.AddressType" name="AddressType" aria-label="Select an option">
+                    <mat-radio-button *ngFor="let type of addessType" [value]="type.TypeId">{{type.Name}}</mat-radio-button>
+                    <!-- <mat-radio-button [value]="2">Shipping Address</mat-radio-button> -->
+                </mat-radio-group>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Name" [(ngModel)]="address.Name" name="Name" required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Mobile Number" [(ngModel)]="address.ContactNo" name="ContactNo" required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Address1" [(ngModel)]="address.Address1" name="Address1" required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Address2" [(ngModel)]="address.Address2" name="Address2">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Landmark" [(ngModel)]="address.Landmark" name="Landmark">
+                </mat-form-field>
+                
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Pincode" [(ngModel)]="address.Pincode" name="Pincode" required>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                <mat-label>Country</mat-label>
+                <mat-select (selectionChange)="bindState($event)" [(ngModel)]="address.CountryId" name="CountryId" required >
+                    <mat-option value="">Select Country</mat-option>
+                    <mat-option *ngFor="let cont of country" [value]="cont.CountryId" >
+                    {{cont.CountryName}}
+                    </mat-option>
+                </mat-select>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>State</mat-label>
+                    <mat-select [(ngModel)]="address.StateId" name="StateId">
+                        <mat-option value="">Select State</mat-option>
+                        <mat-option *ngFor="let s of state" [value]="s.StateId">
+                        {{s.StateName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>      
+            </div>
+        </mat-card-content>
+        <mat-card-actions style="margin-left: 5%;">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!addressForm.form.valid">Save
+            </button>
+            <button mat-raised-button color="secondary" (click)="remove()" *ngIf="address.BillingAddressId" type="button">Delete
+            </button>
+            <a mat-button routerLink="/address-list" color="warm" >Cancel</a>
+        </mat-card-actions>
+    </form>
+</mat-card>

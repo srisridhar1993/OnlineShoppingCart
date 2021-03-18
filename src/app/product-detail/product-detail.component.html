@@ -1,0 +1,72 @@
+<mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">shop</mat-icon>
+        Prpduct
+      </ng-template>
+      <mat-card class="example-card left-detail">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{product.ProductName}}</mat-card-title>
+          <mat-card-subtitle>{{product.CategoryName}} - {{product.BrandName}}</mat-card-subtitle>
+        </mat-card-header>
+        <img style="height: 350px;" mat-card-image src="{{product.DefaultImage}}" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <div class="thunbnails" *ngFor="let image of product.ProductImage">
+            <img mat-card-image src="{{image.ProductImage}}" style="height: 75px;float: left;" 
+            (click)="SelectedImage(image.ProductImage)" alt="Photo of a Shiba Inu">
+            <input type="hidden" value="{{image.ProductImageId}}">
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="example-card right-detail">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{product.ProductName}}</mat-card-title>
+          <mat-card-subtitle>{{product.CategoryName}} - {{product.BrandName}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{product.Description}}
+            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+            bred for hunting.
+          </p>
+          <p>
+            <strong style="color: green;">Available Quantity :</strong> {{product.AvailableQuantity}}
+            <input type="hidden" name="availableQuantity" [(ngModel)]="product.AvailableQuantity" />
+          </p>
+          <p>
+            <strong> Price : </strong>  {{product.TaxIncludedPrice}} <strong>INR</strong>
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button routerLink='/product-shop' color="primary">Back To Shop</button>
+          <button mat-raised-button color="accent">Wish List</button>
+          <button mat-raised-button color="warn" [disabled]="!isAvailabele" (click)="addTocart(product.ProductId)"
+           ><mat-icon class="icon">add_shopping_cart</mat-icon>Add To Cart</button>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Quantity" [(ngModel)]="productQuantity" (keyup)="validatequantity()" >
+          </mat-form-field>
+          <label name="lblMessage" *ngIf="lblMessage" style="color: red;" >You have entered more than available quantity.</label>
+        </mat-card-actions>
+      </mat-card>
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">local_library</mat-icon>
+        Specification
+      </ng-template>
+      Content 2
+    </mat-tab>
+  
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">comment</mat-icon>
+        Review
+      </ng-template>
+  
+      Content 3
+    </mat-tab>
+  </mat-tab-group>

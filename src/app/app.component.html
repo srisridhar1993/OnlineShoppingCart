@@ -1,0 +1,75 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
+        <mat-icon class="icon" style="color: #fff;" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <!-- <h1>{{'ADDRESS_LIST.TITLE' | translate}}</h1> -->
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+            <li>
+              <a>
+                <mat-icon class="icon">home</mat-icon>
+                <span class="label">Home</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <!-- <mat-icon class="icon">dashboard</mat-icon> -->
+                <span class="label">{{WelcomeMessage}}</span>
+              </a>
+            </li>
+        </ul>
+    <span class="menu-spacer"></span>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs class="right-nav">
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <a routerLink='/register'>
+              <mat-icon class="icon">person</mat-icon>
+              <span class="label">Register</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink='/cart-list'>
+                <mat-icon class="icon">shopping_cart</mat-icon>
+            </a>
+          </li>
+            <li>
+                <a routerLink='/login'>
+                  <mat-icon class="icon">lock</mat-icon>
+                  <span  class="label">Login</span>
+                </a>
+            </li>
+            
+            <li>
+                <a (click)="logout()">
+                  <mat-icon class="icon">lock</mat-icon>
+                  <span class="label">LogOut</span>
+                 </a>
+            </li>
+            
+        </ul>
+     </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav *ngIf="!isLoggedIn"  #drawer mode="side" class="mat-sidenav-Container" opened role="navigation">
+    <mat-nav-list>
+      <a mat-list-item routerLink='/dashboard'> <mat-icon class="icon">dashboard</mat-icon>Dashboard</a>
+      <a mat-list-item routerLink='/employee-list'><mat-icon class="icon">person_add</mat-icon>Employee</a>
+      <a mat-list-item routerLink='/customer-list'><mat-icon class="icon">face</mat-icon>Customer</a>
+      <a mat-list-item routerLink='/address-list'><mat-icon class="icon">add_location</mat-icon>Customer Address</a>
+      <a mat-list-item routerLink='/product-list'><mat-icon class="icon">home</mat-icon>Product</a>
+      <a mat-list-item routerLink='/product-shop'><mat-icon class="icon">shop</mat-icon>Shop Products</a>
+      <a mat-list-item routerLink='/order-list'><mat-icon class="icon">reorder</mat-icon>Order List</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content style="min-height: 500px;">
+    <router-outlet>
+      
+    </router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-toolbar color="warn">
+<mat-toolbar-row>
+    <span style="font-size: 12px;">CRM helps you easily manage your contacts</span>
+  </mat-toolbar-row>
+</mat-toolbar>

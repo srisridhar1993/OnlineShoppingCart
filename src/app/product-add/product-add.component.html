@@ -1,0 +1,141 @@
+
+
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+        {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+      </button> -->
+      <form #employeeForm="ngForm" [formGroup]="firstFormGroup" (ngSubmit)="SaveProductDetails()" >
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Product Basic Info</ng-template>
+                <mat-card>
+                    <mat-card-content>
+                        <input type="hidden" name="ProductId" [(ngModel)]="product.ProductId" formControlName="ProductId">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Product Name"  [(ngModel)]="product.ProductName" formControlName="ProductName"  required name="ProductName">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Product Category</mat-label>
+                            <mat-select formControlName="CategoryId" [(ngModel)]="product.CategoryId" >
+                                <mat-option label="--Select Category --"></mat-option>
+                                <mat-option *ngFor="let category of categoryList" [value]="category.CategoryId">
+                                {{category.CategoryName}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Product Brand</mat-label>
+                            <mat-select formControlName="BrandId" [(ngModel)]="product.BrandId" >
+                                <mat-option label="--Select Brand --"></mat-option>
+                                <mat-option *ngFor="let brand of brandList" [value]="brand.BrandId">
+                                {{brand.BrandName}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Product Tags" [(ngModel)]="product.Tags" formControlName="Tags" [(ngModel)]="product.Tags" required name="Tags">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <textarea matInput placeholder="Product Description" [(ngModel)]="product.Description" formControlName="Description" [(ngModel)]="product.Description" required name="Description"></textarea>
+                        </mat-form-field>
+                    </mat-card-content>
+                </mat-card>
+            <div>
+              <button mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Product Pricing</ng-template>
+            <mat-card>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Tax Excluded Price" [(ngModel)]="product.TaxExcludedPrice" formControlName="TaxExcludedPrice" >
+                </mat-form-field>  
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Tax Included Price" [(ngModel)]="product.TaxIncludedPrice" formControlName="TaxIncludedPrice" >
+                </mat-form-field>  
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Tax Rate" [(ngModel)]="product.TaxRate" formControlName="TaxRate" >
+                </mat-form-field>  
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Compared Price" [(ngModel)]="product.ComparedPrice" formControlName="ComparedPrice" >
+                </mat-form-field>  
+            </mat-card>
+            <div>
+                <button mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Product Inventory</ng-template>
+            <mat-card>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Width" [(ngModel)]="product.Width" formControlName="Width" required name="Width">
+                </mat-form-field>  
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Height" [(ngModel)]="product.Height" formControlName="Height" required name="Height">
+                </mat-form-field>  
+                <!-- <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Length" [(ngModel)]="product.Length" formControlName="Length" required name="Length">
+                </mat-form-field>   -->
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Depth" [(ngModel)]="product.Depth" formControlName="Depth" required name="Depth">
+                </mat-form-field>   
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Weight" [(ngModel)]="product.Weight" formControlName="Weight" required name="Weight">
+                </mat-form-field>  
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Color" [(ngModel)]="product.Color" formControlName="Color" required name="Color">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Extra Shipping Fee" [(ngModel)]="product.ExtraShippingFees" formControlName="ExtraShippingFees" required name="ExtraShippingFees">
+                </mat-form-field>    
+            </mat-card>
+            <div>
+                <button mat-raised-button color="primary" type="button" matStepperNext>Next</button>
+                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Product Shipping</ng-template>
+            <mat-card>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="SKU" [(ngModel)]="product.SKU" formControlName="SKU" required name="SKU">
+                </mat-form-field>  
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Quantity" [(ngModel)]="product.Quantity" formControlName="Quantity" required name="Quantity">
+                </mat-form-field>  
+            </mat-card>
+            <div>
+                <button mat-raised-button color="accent" type="button" color="accent" matStepperNext>Next</button>
+                <button mat-raised-button color="accent" color="primary" matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step *ngIf="product.ProductId" [stepControl]="firstFormGroup">
+            <ng-template matStepLabel>Products Images</ng-template>
+            <mat-card>
+                <mat-card-content>
+                    <div style="margin: 1%;">
+                        <img *ngFor="let u of urls" src="{{u.ProductImage}}" class="rounded mb-3" class="preview-img" width="180">
+                    </div>
+                    <input type='file' multiple="true" (change)="onFileChanged($event)">
+                    <button mat-raised-button color="warn" (click)="OnUploadImages()">
+                    <mat-icon class="icon">cloud_upload</mat-icon> Upload</button>
+                </mat-card-content>
+            </mat-card>
+            <div>
+                <button mat-raised-button color="accent" type="button" color="accent" matStepperNext>Next</button>
+                <button mat-raised-button color="accent" color="primary" matStepperPrevious>Back</button>
+            </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Save</ng-template>
+          You are now done.
+          <div>
+            <button mat-raised-button color="accent" color="accent" type="submit">Save Product</button>
+            <button mat-raised-button color="warn" *ngIf="!product.ProductId" (click)="stepper.reset()">Reset</button>
+            <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+            <a mat-button routerLink="/product-list" color="red" >Cancel</a>
+          </div>
+        
+        </mat-step>
+      </mat-horizontal-stepper>
+    </form>

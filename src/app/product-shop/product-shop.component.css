@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 25%;
+    margin:1%;
+    float: left;
+  }
+  img{
+    height: 180px;
+    vertical-align: middle;
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
