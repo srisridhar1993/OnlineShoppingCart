@@ -1,19 +1,19 @@
 
 <mat-card>
     <mat-toolbar>
-      <span>Your Shopping Cart</span>
+      <span>{{'CART_LIST.TITLE' | translate}}</span>
     </mat-toolbar>
     <mat-card-content>
         <div *ngIf="cartListItem">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Total Price</th>
-                        <th>Remove</th>
+                        <th>{{'CART_LIST.IMAGE' | translate}}</th>
+                        <th>{{'CART_LIST.PRODUCT_NAME' | translate}}</th>
+                        <th>{{'CART_LIST.QUANTITY' | translate}}</th>
+                        <th>{{'CART_LIST.UNIT_PRICE' | translate}}</th>
+                        <th>{{'CART_LIST.TOTAL_PRICE' | translate}}</th>
+                        <th>{{'CART_LIST.REMOVE' | translate}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,22 +37,22 @@
                         </td>
                         <td>
                             <a>
-                                <mat-icon class="icon" (click)="removefromcart(item.ProductId)" >delete</mat-icon>
+                                <mat-icon class="icon" (click)="removefromcart(item.ProductId)" >{{'CART_LIST.DELETE' | translate}}</mat-icon>
                             </a>
                         </td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th colspan="4">Grand Total</th>
+                        <th colspan="4">{{'CART_LIST.GRAND_TOTAL' | translate}}</th>
                         <th colspan="2">{{grandTotal}}</th>
                     </tr>
                 </tfoot>
             </table>
         </div>
         <div style="padding: 3%;">
-            <button style="float: right;margin-bottom:5%;margin-left: 1%;" mat-raised-button color="accent" routerLink='/product-shop' >Continue Shopping</button>
-            <button style="float: right;margin-bottom:5%; " (click)="placeOrder()" mat-raised-button color="primary" type="button" >Place Order</button>
+            <button style="float: right;margin-bottom:5%;margin-left: 1%;" mat-raised-button color="accent" routerLink='/product-shop' >{{'CART_LIST.CONTINUE_SHOPPING' | translate}}</button>
+            <button style="float: right;margin-bottom:5%; " (click)="placeOrder()" mat-raised-button color="primary" type="button" >{{'CART_LIST.PLACE_ORDER' | translate}}</button>
         </div>
     </mat-card-content>
 </mat-card>

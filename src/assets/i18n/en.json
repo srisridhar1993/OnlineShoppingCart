@@ -1,4 +1,17 @@
 {
+    "HOME": {
+        "TITLE": "Home",
+        "LOGIN": "Login",
+        "REGISTER": "Register",
+        "LOGOUT": "LogOut",
+        "DASHBOARD": "Dashboard",
+        "EMPLOYEE": "Employee",
+        "CUSTOMER":"Customer",
+        "CUSTOMER_ADDRESS": "Customer Address",
+        "PRODUCT": "Product",
+        "SHOP_PRODUCT": "Shop Products",
+        "ORDER_LIST": "Order List"
+    },
     "ADDRESS_LIST": {
         "TITLE": "Your All Address List",
         "NAME" : "Name",
@@ -49,20 +62,22 @@
         "EDIT": "Edit",
         "ADD": "Add"
     },
+    "EMPLOYEE_EDIT": {
+        "EMPLOYEE": "Employee",
+        "SAVE": "Save",
+        "DELETE": "Delete",
+        "CANCEL": "Cancel"
+    },
     "EMPLOYEE_LIST": {
         "TITLE": "Employee List",
-        "FIRST_NAME": "",
-        "LAST_NAME": "",
+        "FIRST_NAME": "first Name",
+        "LAST_NAME": "Last Name",
         "MOBILE": "Mobile",
         "EMAIL": "Email",
         "ADDRESS": "Address",
         "ACTION": "Action",
         "EDIT": "Edit",
         "ADD": "Add"
-    },
-    "LOGIN": {
-        "LOGIN": "Login",
-        "REGISTER": "Register"
     },
     "ORDER_DETAILS": {
         "SHIPPING_ADDRESS": "Shipping Address",
@@ -104,6 +119,17 @@
         "SAVE_PRODUCT": "Save Product",
         "RESET": "Reset",
         "CANCEL": "Cancel"
+    },
+    "PRODUCT_DETAIL": {
+        "SHOP": "Shop",
+        "PRODUCT": "Product",
+        "AVAILABLE_QUANTITY": "Available Quantity",
+        "PRICE": "Price",
+        "INR": "INR",
+        "BACK_TO_SHOP": "Back To Shop",
+        "WISH_LIST": "Wish List",
+        "ADD_TO_CART": "Add To Cart",
+        "QUANTITY_LIMIT": "You have entered more than available quantity."
     },
     "PRODUCT_LIST": {
         "TITLE": "Product List",

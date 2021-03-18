@@ -1,8 +1,8 @@
 <mat-tab-group>
     <mat-tab>
       <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">shop</mat-icon>
-        Prpduct
+        <mat-icon class="example-tab-icon">{{'PRODUCT_DETAIL.SHOP' | translate}}</mat-icon>
+        {{'PRODUCT_DETAIL.PRODUCT' | translate}}
       </ng-template>
       <mat-card class="example-card left-detail">
         <mat-card-header>
@@ -33,22 +33,22 @@
             bred for hunting.
           </p>
           <p>
-            <strong style="color: green;">Available Quantity :</strong> {{product.AvailableQuantity}}
+            <strong style="color: green;">{{'PRODUCT_DETAIL.AVAILABLE_QUANTITY' | translate}}</strong> {{product.AvailableQuantity}}
             <input type="hidden" name="availableQuantity" [(ngModel)]="product.AvailableQuantity" />
           </p>
           <p>
-            <strong> Price : </strong>  {{product.TaxIncludedPrice}} <strong>INR</strong>
+            <strong> {{'PRODUCT_DETAIL.PRICE' | translate}} </strong>  {{product.TaxIncludedPrice}} <strong>{{'PRODUCT_DETAIL.INR' | translate}}</strong>
           </p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button routerLink='/product-shop' color="primary">Back To Shop</button>
-          <button mat-raised-button color="accent">Wish List</button>
+            <button mat-raised-button routerLink='/product-shop' color="primary">{{'PRODUCT_DETAIL.BACK_TO_SHOP' | translate}}</button>
+          <button mat-raised-button color="accent">{{'PRODUCT_DETAIL.WISH_LIST' | translate}}</button>
           <button mat-raised-button color="warn" [disabled]="!isAvailabele" (click)="addTocart(product.ProductId)"
-           ><mat-icon class="icon">add_shopping_cart</mat-icon>Add To Cart</button>
+           ><mat-icon class="icon">add_shopping_cart</mat-icon>{{'PRODUCT_DETAIL.ADD_TO_CART' | translate}}</button>
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Quantity" [(ngModel)]="productQuantity" (keyup)="validatequantity()" >
           </mat-form-field>
-          <label name="lblMessage" *ngIf="lblMessage" style="color: red;" >You have entered more than available quantity.</label>
+          <label name="lblMessage" *ngIf="lblMessage" style="color: red;" >{{'PRODUCT_DETAIL.QUANTITY_LIMIT' | translate}}</label>
         </mat-card-actions>
       </mat-card>
     </mat-tab>

@@ -45,6 +45,7 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { AddressListComponent } from './address-list/address-list.component';
 import { CustomerAddressComponent } from './customer-address/customer-address.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { languageLoader } from 'src/assets/translation/translation';
 
 
 const appRoutes: Routes = [
@@ -172,7 +173,14 @@ const appRoutes: Routes = [
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: languageLoader,
+          deps: [HttpClient],
+      },
+      isolate: false,
+  }),
     OwlDateTimeModule,
     OwlNativeDateTimeModule
   ],
@@ -180,7 +188,3 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http);
-// }

@@ -1,7 +1,7 @@
 <mat-card>
     <form #customerForm="ngForm" (ngSubmit)="save(customerForm.value)">
         <mat-toolbar>
-            <span>Registration</span>
+            <span>{{'ADD_CUSTOMER.REGISTRATION' | translate}}</span>
         </mat-toolbar>
         <mat-card-content>
             <div>
@@ -24,11 +24,11 @@
             </div>
         </mat-card-content>
         <mat-card-actions style="margin-left: 5%;">
-            <button mat-raised-button color="primary" type="submit" [disabled]="!customerForm.form.valid">Save
+            <button mat-raised-button color="primary" type="submit" [disabled]="!customerForm.form.valid">{{'ADD_CUSTOMER.SAVE' | translate}}
             </button>
-            <button mat-raised-button color="secondary" (click)="remove()" *ngIf="customer.CustomerId" type="button">Delete
+            <button mat-raised-button color="secondary" (click)="remove()" *ngIf="customer.CustomerId" type="button">{{'ADD_CUSTOMER.DELETE' | translate}}
             </button>
-            <a mat-button routerLink="/login" color="warm" >Login</a>
+            <a mat-button routerLink="/login" color="warm" >{{'ADD_CUSTOMER.LOGIN' | translate}}</a>
         </mat-card-actions>
     </form>
 </mat-card>

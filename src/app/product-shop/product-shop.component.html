@@ -10,9 +10,9 @@
        {{product.Description}}
       </p>
     </mat-card-content>
-    <button mat-raised-button style="width:100%;" [routerLink]="['/product-detail', product.ProductId]" color="warn" ><mat-icon class="icon">local_library &nbsp;&nbsp;</mat-icon>DETAIL VIEW</button>
+    <button mat-raised-button style="width:100%;" [routerLink]="['/product-detail', product.ProductId]" color="warn" ><mat-icon class="icon">local_library &nbsp;&nbsp;</mat-icon>{{'SHOP_PRODUCT.DETAIL_VIEW' | translate}}</button>
     <mat-card-actions>
-      <button mat-button><mat-icon class="icon">add_shopping_cart</mat-icon>Add To Cart</button>
-      <button mat-button><mat-icon class="icon"></mat-icon> INR {{product.TaxIncludedPrice}} </button>
+      <button mat-button><mat-icon class="icon">add_shopping_cart</mat-icon>{{'SHOP_PRODUCT.ADD_TO_CART' | translate}}</button>
+      <button mat-button><mat-icon class="icon"></mat-icon> {{'SHOP_PRODUCT.INR' | translate}} {{product.TaxIncludedPrice}} </button>
     </mat-card-actions>
 </mat-card>

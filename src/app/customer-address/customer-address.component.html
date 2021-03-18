@@ -1,7 +1,7 @@
 <mat-card>
         <form #addressForm="ngForm" (ngSubmit)="saveAddress(addressForm.value)">
     <mat-toolbar>
-        <span>Add New Address</span>
+        <span>{{'ADD_NEW_ADDRESS.TITLE' | translate}}</span>
     </mat-toolbar>
     
         <mat-card-content>
@@ -31,18 +31,18 @@
                     <input matInput placeholder="Pincode" [(ngModel)]="address.Pincode" name="Pincode" required>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                <mat-label>Country</mat-label>
+                <mat-label>{{'ADD_NEW_ADDRESS.COUNTRY' | translate}}</mat-label>
                 <mat-select (selectionChange)="bindState($event)" [(ngModel)]="address.CountryId" name="CountryId" required >
-                    <mat-option value="">Select Country</mat-option>
+                    <mat-option value="">{{'ADD_NEW_ADDRESS.SELECT_COUNTRY' | translate}}</mat-option>
                     <mat-option *ngFor="let cont of country" [value]="cont.CountryId" >
                     {{cont.CountryName}}
                     </mat-option>
                 </mat-select>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>State</mat-label>
+                    <mat-label>{{'ADD_NEW_ADDRESS.STATE' | translate}}</mat-label>
                     <mat-select [(ngModel)]="address.StateId" name="StateId">
-                        <mat-option value="">Select State</mat-option>
+                        <mat-option value="">{{'ADD_NEW_ADDRESS.SELECT_STATE' | translate}}</mat-option>
                         <mat-option *ngFor="let s of state" [value]="s.StateId">
                         {{s.StateName}}
                         </mat-option>
@@ -51,11 +51,11 @@
             </div>
         </mat-card-content>
         <mat-card-actions style="margin-left: 5%;">
-            <button mat-raised-button color="primary" type="submit" [disabled]="!addressForm.form.valid">Save
+            <button mat-raised-button color="primary" type="submit" [disabled]="!addressForm.form.valid">{{'ADD_NEW_ADDRESS.SAVE' | translate}}
             </button>
-            <button mat-raised-button color="secondary" (click)="remove()" *ngIf="address.BillingAddressId" type="button">Delete
+            <button mat-raised-button color="secondary" (click)="remove()" *ngIf="address.BillingAddressId" type="button">{{'ADD_NEW_ADDRESS.CANCEL' | translate}}
             </button>
-            <a mat-button routerLink="/address-list" color="warm" >Cancel</a>
+            <a mat-button routerLink="/address-list" color="warm" >{{'ADD_NEW_ADDRESS.DELETE' | translate}}</a>
         </mat-card-actions>
     </form>
 </mat-card>

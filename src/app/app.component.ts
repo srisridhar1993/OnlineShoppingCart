@@ -16,12 +16,12 @@ export class AppComponent implements OnInit, OnDestroy {
   WelcomeMessage: string;
 
   constructor(private route: ActivatedRoute, private router: Router, private translate: TranslateService) { 
+    this.translate.addLangs(['en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
    }
 
   ngOnInit() {
-    console.log(this.translate.use('ADDRESS_LIST.TITLE'));
     this.sub = this.route.params.subscribe(params => {});
     if (sessionStorage.getItem('LoginDetails') !== null && sessionStorage.getItem('LoginDetails') !== undefined) {
         this.details = JSON.parse(sessionStorage.getItem('LoginDetails'));
